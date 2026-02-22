@@ -1,19 +1,26 @@
 "use client";
 
-import { useCallback, useMemo, useState, type KeyboardEvent } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+  type KeyboardEvent,
+} from "react";
 import { colorsData } from "@/data/colors";
-import { questions } from "@/data/questions-en";
+import { getQuestionText, questions } from "@/data/questions";
 import { getContrastYIQ } from "@/lib/contrast";
+import {
+  LOCALE_LABELS,
+  LOCALE_STORAGE_KEY,
+  resolveInitialLocale,
+} from "@/lib/locale";
+import { SUPPORTED_LOCALES, type Locale, type QuestionRecord } from "@/types/content";
 import styles from "./play.module.css";
-
-type Question = {
-  question: string;
-  type: string;
-};
 
 type CardState = {
   started: boolean;
-  question?: Question;
+  question?: QuestionRecord;
   backgroundColor: string;
   textColor: "black" | "white";
 };
@@ -29,6 +36,11 @@ export default function PlayPage() {
   );
 
   const [showHelp, setShowHelp] = useState(false);
+  const [locale, setLocale] = useState<Locale>(() => resolveInitialLocale());
+
+  useEffect(() => {
+    window.localStorage.setItem(LOCALE_STORAGE_KEY, locale);
+  }, [locale]);
 
   const [card, setCard] = useState<CardState>(() => {
     const openingColor = pickRandom(colorsData).color;
@@ -45,7 +57,7 @@ export default function PlayPage() {
       return;
     }
 
-    const randomQuestion = pickRandom(questions as Question[]);
+    const randomQuestion = pickRandom(questions);
     const backgroundColor = colorByType.get(randomQuestion.type) ?? "#70FFBF";
 
     setCard({
@@ -68,6 +80,23 @@ export default function PlayPage() {
 
   return (
     <>
+      <nav className={styles.localeSwitcher} aria-label="Language selector">
+        {SUPPORTED_LOCALES.map((nextLocale) => (
+          <button
+            key={nextLocale}
+            type="button"
+            className={`${styles.localeButton} ${locale === nextLocale ? styles.localeButtonActive : ""}`}
+            onClick={(event) => {
+              event.stopPropagation();
+              setLocale(nextLocale);
+            }}
+            aria-pressed={locale === nextLocale}
+          >
+            {LOCALE_LABELS[nextLocale]}
+          </button>
+        ))}
+      </nav>
+
       <button
         type="button"
         className={`${styles.questionMark} ${showHelp ? styles.showModal : ""}`}
@@ -120,7 +149,7 @@ export default function PlayPage() {
         <article className={styles.card}>
           {card.started && card.question ? (
             <>
-              <p className={styles.question}>{card.question.question}</p>
+              <p className={styles.question}>{getQuestionText(card.question, locale)}</p>
               <h2 className={styles.type}>{card.question.type}</h2>
             </>
           ) : (

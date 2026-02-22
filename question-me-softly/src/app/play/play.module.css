@@ -57,6 +57,36 @@
   letter-spacing: 0.08em;
 }
 
+.localeSwitcher {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 4;
+  margin: 20px;
+  display: inline-flex;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid rgba(63, 63, 63, 0.18);
+  background: rgba(255, 255, 255, 0.74);
+  backdrop-filter: blur(3px);
+}
+
+.localeButton {
+  border: 0;
+  padding: 8px 12px;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  background: transparent;
+  color: #3f3f3f;
+  cursor: pointer;
+}
+
+.localeButtonActive {
+  background: #3f3f3f;
+  color: #fff;
+}
+
 .questionMark {
   font-size: 2.5rem;
   border-radius: 4rem;
@@ -110,6 +140,10 @@
   .card {
     max-width: 85vw;
     padding: 5rem 0;
+  }
+
+  .localeSwitcher {
+    margin: 12px;
   }
 
   .helpModal {
