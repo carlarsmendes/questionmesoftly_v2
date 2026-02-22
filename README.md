@@ -27,25 +27,6 @@ Preserve the original full-screen, low-friction experience while preparing the p
 - `question-me-softly/src/types/content.ts` -> core content and locale types
 - `question-me-softly/src/lib/locale.ts` -> locale detection/persistence helpers
 
-## Local Development
-```bash
-cd "question-me-softly"
-npm install
-npm run dev
-```
-
-Open [http://localhost:3000/play](http://localhost:3000/play).
-
-## Scripts
-Run inside `question-me-softly/`:
-
-```bash
-npm run dev
-npm run lint
-npm run build
-npm run start
-```
-
 ## Content Model (Locale-Ready)
 Questions live in JSON and are keyed by stable IDs:
 
@@ -66,12 +47,6 @@ Notes:
 - `id` must remain stable once published.
 - Keep `type` values consistent with color mapping.
 - Empty locale values fall back to English in the UI.
-
-## Deployment (Vercel)
-- Import this GitHub repo in Vercel.
-- Set **Root Directory** to `question-me-softly`.
-- Deploy from `main`.
-- For custom domain: connect domain after baseline deploy is stable.
 
 ## README Maintenance Rules
 Update this README whenever one of these changes:
