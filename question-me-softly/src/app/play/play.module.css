@@ -1,0 +1,65 @@
+.stage {
+  width: 100vw;
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+  transition: background-color 180ms linear, color 180ms linear;
+}
+
+.card {
+  min-height: 100svh;
+  width: 100%;
+  max-width: 70vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 1.35;
+  padding: 4rem 1rem;
+  font-family: Montserrat, "Avenir Next", Avenir, "Segoe UI", sans-serif;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-weight: 500;
+  margin-top: 0.8rem;
+}
+
+.startHint {
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-style: italic;
+  opacity: 0.95;
+}
+
+.question {
+  font-size: clamp(2rem, 4.6vw, 3rem);
+  font-weight: 500;
+}
+
+.type {
+  margin-top: 2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 768px) {
+  .card {
+    max-width: 85vw;
+    padding: 5rem 0;
+  }
+}
