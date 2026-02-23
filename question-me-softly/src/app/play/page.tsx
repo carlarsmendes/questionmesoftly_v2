@@ -112,24 +112,28 @@ export default function PlayPage() {
       {showHelp ? (
         <section className={styles.helpModal} aria-live="polite">
           <div className={styles.helpContent}>
-            <p>&ldquo;Most of us think about connection as something that happens to us.</p>
-            <p>But love and connection - These are actions.&rdquo;</p>
+            <p>What happens if we ask better questions?</p>
             <br />
-            <p>
-              Propose doing this experiment with someone you&apos;ve always thought
-              was interesting but have yet to take the leap with, or your
-              significant other.
-            </p>
+            <p>Most of us think connection is something that simply happens.</p>
+            <p>But meaningful conversations are choices.</p>
             <br />
-            <p>Skip the fancy dinner.</p>
-            <p>
-              Instead, grab a bottle of wine and make the choice to commit to
-              the magic of the questions. Allow the vulnerability of the answers
-              to carry you closer together, and revel in the soul-deep
-              connection that can ensue.
-            </p>
+            <p>A choice to pause.</p>
+            <p>A choice to listen.</p>
+            <p>A choice to go beyond the expected.</p>
             <br />
-            <p>Take action.</p>
+            <p>Most conversations move fast.</p>
+            <p>This one doesn&apos;t have to.</p>
+            <br />
+            <p>Commit to the question in front of you.</p>
+            <p>Let it shift the tone of the room.</p>
+            <br />
+            <p>For friends.</p>
+            <p>For teams.</p>
+            <p>For partners.</p>
+            <p>Or for yourself.</p>
+            <br />
+            <p>Start with a question.</p>
+            <p>See where it leads.</p>
           </div>
         </section>
       ) : null}
