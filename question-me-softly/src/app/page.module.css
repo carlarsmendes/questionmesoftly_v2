@@ -1,17 +1,38 @@
 .page {
   --accent-primary: #247ba0;
   --accent-secondary: #69a2b0;
+  --accent-tertiary: #ff8c42;
   --text-main: #171717;
   --text-soft: #4b4b4b;
-  --divider: rgba(105, 162, 176, 0.3);
+  --divider: rgba(255, 140, 66, 0.34);
 
   min-height: 100svh;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 92px 26px 96px;
-  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
   color: var(--text-main);
-  background: #f7f6f3;
+  background: #f5f4ef;
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+}
+
+.band {
+  width: 100%;
+  border-top: 1px solid var(--divider);
+}
+
+.heroBand {
+  border-top: 0;
+}
+
+.bandMuted {
+  background: #f0efea;
+}
+
+.finalBand {
+  background: #f7f6f2;
+}
+
+.inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 84px 26px;
 }
 
 .hero {
@@ -19,7 +40,6 @@
   flex-direction: column;
   gap: 1.35rem;
   padding-top: 0.2rem;
-  margin-bottom: 8.7rem;
 }
 
 .brand {
@@ -62,8 +82,8 @@
 }
 
 .primaryCta:hover {
-  background: var(--accent-secondary);
-  border-color: var(--accent-secondary);
+  background: var(--accent-tertiary);
+  border-color: var(--accent-tertiary);
 }
 
 .languages {
@@ -73,9 +93,7 @@
 }
 
 .section {
-  margin-bottom: 7.2rem;
-  padding-bottom: 3.6rem;
-  border-bottom: 1px solid var(--divider);
+  padding-bottom: 1.4rem;
 }
 
 .sectionLight {
@@ -90,7 +108,7 @@
   margin-bottom: 1.28rem;
   font-weight: 700;
   text-transform: uppercase;
-  border-bottom: 2px solid var(--accent-secondary);
+  border-bottom: 2px solid var(--accent-tertiary);
   padding-bottom: 0.23rem;
 }
 
@@ -126,7 +144,7 @@
 }
 
 .finalCta {
-  margin-top: 10.4rem;
+  margin-top: 2.2rem;
   margin-bottom: 10.8rem;
   display: flex;
   flex-direction: column;
@@ -168,25 +186,15 @@
 }
 
 .footerLink:hover {
-  color: var(--accent-secondary);
+  color: var(--accent-tertiary);
 }
 
 @media (max-width: 640px) {
-  .page {
-    padding: 66px 18px 72px;
-  }
-
-  .hero {
-    margin-bottom: 7.2rem;
-  }
-
-  .section {
-    margin-bottom: 5.7rem;
-    padding-bottom: 2.8rem;
+  .inner {
+    padding: 64px 18px;
   }
 
   .finalCta {
-    margin-top: 8.4rem;
-    margin-bottom: 8.8rem;
+    margin-bottom: 7.6rem;
   }
 }
