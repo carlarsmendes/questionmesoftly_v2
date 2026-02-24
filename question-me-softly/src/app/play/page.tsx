@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { useSearchParams } from "next/navigation";
 import {
   useCallback,
   useEffect,
@@ -9,7 +10,11 @@ import {
   type KeyboardEvent,
 } from "react";
 import { colorsData } from "@/data/colors";
-import { getQuestionText, questions } from "@/data/questions";
+import {
+  getQuestionText,
+  getQuestionsForPack,
+  resolvePackId,
+} from "@/data/questions";
 import { getContrastYIQ } from "@/lib/contrast";
 import {
   LOCALE_LABELS,
@@ -32,6 +37,10 @@ function pickRandom<T>(items: T[]): T {
 }
 
 function PlayPageClient() {
+  const searchParams = useSearchParams();
+  const packId = resolvePackId(searchParams.get("pack"));
+  const packQuestions = useMemo(() => getQuestionsForPack(packId), [packId]);
+
   const colorByType = useMemo(
     () => new Map(colorsData.map((color) => [color.type, color.color])),
     [],
@@ -59,7 +68,7 @@ function PlayPageClient() {
       return;
     }
 
-    const randomQuestion = pickRandom(questions);
+    const randomQuestion = pickRandom(packQuestions);
     const backgroundColor = colorByType.get(randomQuestion.type) ?? "#70FFBF";
 
     setCard({
@@ -68,7 +77,7 @@ function PlayPageClient() {
       backgroundColor,
       textColor: getContrastYIQ(backgroundColor),
     });
-  }, [colorByType, showHelp]);
+  }, [colorByType, packQuestions, showHelp]);
 
   const onKeyDown = useCallback(
     (event: KeyboardEvent<HTMLElement>) => {

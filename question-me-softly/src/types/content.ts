@@ -10,10 +10,13 @@ export type QuestionType =
   | "Career"
   | "Likes and Dislikes";
 
+export type PackId = "general" | "team";
+
 export type QuestionBase = {
   id: string;
   type: QuestionType;
   source: string;
+  packs: PackId[];
 };
 
 export type QuestionTranslation = {
@@ -24,4 +27,11 @@ export type QuestionTranslation = {
 
 export type QuestionRecord = QuestionBase & {
   text: Record<Locale, string>;
+};
+
+export type QuestionPack = {
+  id: Exclude<PackId, "general">;
+  name: string;
+  description: string;
+  questionIds: string[];
 };

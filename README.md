@@ -15,6 +15,8 @@ Preserve the original full-screen, low-friction experience while preparing the p
 - [x] Locale switcher (`en`, `pt-PT`, `pt-BR`)
 - [x] Locale persistence in `localStorage`
 - [x] Browser-language default locale resolution
+- [x] Pack-ready content architecture (`general` + `team`)
+- [x] Team Pack MVP deck via `/play?pack=team`
 - [ ] No-repeat finite deck + restart state
 - [ ] Shareable question routes (`/q/[id]`)
 - [ ] Landing page/SEO polish
@@ -24,6 +26,7 @@ Preserve the original full-screen, low-friction experience while preparing the p
 - `question-me-softly/` -> Next.js app (deploy root in Vercel)
 - `question-me-softly/src/app/play/` -> main gameplay UI
 - `question-me-softly/content/questions.json` -> canonical question IDs/types/source
+- `question-me-softly/content/packs/team.json` -> curated Team Pack deck IDs
 - `question-me-softly/content/en/questions.json` -> English text entries
 - `question-me-softly/content/pt-pt/questions.json` -> PT-PT text entries
 - `question-me-softly/content/pt-br/questions.json` -> PT-BR text entries
@@ -37,7 +40,8 @@ Canonical question schema:
 {
   "id": "q-0001",
   "type": "Likes and Dislikes",
-  "source": "https://..."
+  "source": "https://...",
+  "packs": ["general"]
 }
 ```
 
@@ -55,6 +59,7 @@ Notes:
 - `id` must remain stable once published.
 - Keep `type` values consistent with color mapping.
 - All locale files must contain the same set of `id`s.
+- Canonical questions include `packs` as an array (currently all in `general`).
 
 ## README Maintenance Rules
 Update this README whenever one of these changes:
