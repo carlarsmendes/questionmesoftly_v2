@@ -10,9 +10,18 @@ export type QuestionType =
   | "Career"
   | "Likes and Dislikes";
 
-export type QuestionRecord = {
+export type QuestionBase = {
   id: string;
   type: QuestionType;
   source: string;
+};
+
+export type QuestionTranslation = {
+  id: string;
+  language: Locale;
+  text: string;
+};
+
+export type QuestionRecord = QuestionBase & {
   text: Record<Locale, string>;
 };

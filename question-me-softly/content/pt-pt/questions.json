@@ -1,0 +1,762 @@
+[
+  {
+    "id": "q-0001",
+    "language": "pt-PT",
+    "text": "Como é o teu dia de férias perfeito?"
+  },
+  {
+    "id": "q-0002",
+    "language": "pt-PT",
+    "text": "Qual foram as melhores férias de sempre?"
+  },
+  {
+    "id": "q-0003",
+    "language": "pt-PT",
+    "text": "Qual é o teu próximo destino de férias e porquê?"
+  },
+  {
+    "id": "q-0004",
+    "language": "pt-PT",
+    "text": "Qual foi a tua idade favorita?"
+  },
+  {
+    "id": "q-0005",
+    "language": "pt-PT",
+    "text": "Qual foi o último livro que leste?"
+  },
+  {
+    "id": "q-0006",
+    "language": "pt-PT",
+    "text": "Qual é o teu sabor de gelado / sorvete favorito?"
+  },
+  {
+    "id": "q-0007",
+    "language": "pt-PT",
+    "text": "És uma pessoa mais introvertida ou extrovertida?"
+  },
+  {
+    "id": "q-0008",
+    "language": "pt-PT",
+    "text": "Qual foi o último show de televisão que maratonaste/viste seguido?"
+  },
+  {
+    "id": "q-0009",
+    "language": "pt-PT",
+    "text": "Fala de uma única coisa que melhora imediatamente o teu dia"
+  },
+  {
+    "id": "q-0010",
+    "language": "pt-PT",
+    "text": "Tens um feriado favorito? Qual?"
+  },
+  {
+    "id": "q-0011",
+    "language": "pt-PT",
+    "text": "Qual foi a melhor piada que já ouviste?"
+  },
+  {
+    "id": "q-0012",
+    "language": "pt-PT",
+    "text": "Qual é a tua refeição favorita? Café da manhã / Pequeno almoço, Almoço, Lanche ou Jantar?"
+  },
+  {
+    "id": "q-0013",
+    "language": "pt-PT",
+    "text": "Quando eras pequeno, comias as crostas do pão? Porquê / Porque não?"
+  },
+  {
+    "id": "q-0014",
+    "language": "pt-PT",
+    "text": "Preferes cozinhar ou pedir para entregar comida?"
+  },
+  {
+    "id": "q-0015",
+    "language": "pt-PT",
+    "text": "Já mudaste de opinião em relação a algo que não gostavas?"
+  },
+  {
+    "id": "q-0016",
+    "language": "pt-PT",
+    "text": "Qual é o teu jogo de tabuleiro favorito?"
+  },
+  {
+    "id": "q-0017",
+    "language": "pt-PT",
+    "text": "Existe alguma coisa (material) sem a qual não conseguirias viver?"
+  },
+  {
+    "id": "q-0018",
+    "language": "pt-PT",
+    "text": "Qual seria a primeira coisa que farias se ganhasses a lotaria?"
+  },
+  {
+    "id": "q-0019",
+    "language": "pt-PT",
+    "text": "Qual é o tu aspeto favorito em relação ao teu trabalho atual?"
+  },
+  {
+    "id": "q-0020",
+    "language": "pt-PT",
+    "text": "Se pudesses ter qualquer animal exótico como animal de estimação, qual seria?"
+  },
+  {
+    "id": "q-0021",
+    "language": "pt-PT",
+    "text": "O que te orgulha mais em relação à tua carreira atual? Qual foi o teu ponto mais alto?"
+  },
+  {
+    "id": "q-0022",
+    "language": "pt-PT",
+    "text": "Que tipo de pessoa és, viver para trabalhar ou trabalhar para viver?"
+  },
+  {
+    "id": "q-0023",
+    "language": "pt-PT",
+    "text": "Achas que vais ficar no teu trabalho atual por mais tempo? Porquê ou por que não?"
+  },
+  {
+    "id": "q-0024",
+    "language": "pt-PT",
+    "text": "Como é que o teu 'tu' de 10 anos reagiria se soubesse qual o teu trabalho hoje?"
+  },
+  {
+    "id": "q-0025",
+    "language": "pt-PT",
+    "text": "O que te recordas mais sobre o teu primeiro trabalho?"
+  },
+  {
+    "id": "q-0026",
+    "language": "pt-PT",
+    "text": "Qual foi o pior trabalho que já tiveste?"
+  },
+  {
+    "id": "q-0027",
+    "language": "pt-PT",
+    "text": "Já alguma vez tiveste um segundo trabalho (side hustle), ou pensaste em ter um?"
+  },
+  {
+    "id": "q-0028",
+    "language": "pt-PT",
+    "text": "O que te interessou originalmente no teu trabalho atual?"
+  },
+  {
+    "id": "q-0029",
+    "language": "pt-PT",
+    "text": "Que conselho darias ao teu 'eu' mais novo?"
+  },
+  {
+    "id": "q-0030",
+    "language": "pt-PT",
+    "text": "Como separas a tua vida dot teu trabalho?"
+  },
+  {
+    "id": "q-0031",
+    "language": "pt-PT",
+    "text": "Como é que vais saber que já 'conseguiste chegar ao topo', em termos de carreira?"
+  },
+  {
+    "id": "q-0032",
+    "language": "pt-PT",
+    "text": "Já tiveste o 'sindrome de impostor'?"
+  },
+  {
+    "id": "q-0033",
+    "language": "pt-PT",
+    "text": "Qual é a tua opinião sobre 'viciados em trabalho'?"
+  },
+  {
+    "id": "q-0034",
+    "language": "pt-PT",
+    "text": "Tens um mentor profissional? Se não, gostavas de ter?"
+  },
+  {
+    "id": "q-0035",
+    "language": "pt-PT",
+    "text": "Como te motivas na tua carreira?"
+  },
+  {
+    "id": "q-0036",
+    "language": "pt-PT",
+    "text": "Qual foi o melhor conselho de carreira que já recebeste?"
+  },
+  {
+    "id": "q-0037",
+    "language": "pt-PT",
+    "text": "Qual foi o pior conselho de carreira que já ouviste?"
+  },
+  {
+    "id": "q-0038",
+    "language": "pt-PT",
+    "text": "Como recuperas depois de cometeres um erro no trabalho?"
+  },
+  {
+    "id": "q-0039",
+    "language": "pt-PT",
+    "text": "O que a tua família pensa da tua carreira?"
+  },
+  {
+    "id": "q-0040",
+    "language": "pt-PT",
+    "text": "Se pudesses recomeçar tudo, seguirias a mesma carreira? Porquê ou por que não?"
+  },
+  {
+    "id": "q-0041",
+    "language": "pt-PT",
+    "text": "O que te dá energia na tua carreira?"
+  },
+  {
+    "id": "q-0042",
+    "language": "pt-PT",
+    "text": "Quanto tempo passas com a tua família?"
+  },
+  {
+    "id": "q-0043",
+    "language": "pt-PT",
+    "text": "Com quem gostas mais de passar tempo e porquê?"
+  },
+  {
+    "id": "q-0044",
+    "language": "pt-PT",
+    "text": "Eras próximo da tua família enquanto cresceste?"
+  },
+  {
+    "id": "q-0045",
+    "language": "pt-PT",
+    "text": "Como defines a tua família hoje?"
+  },
+  {
+    "id": "q-0046",
+    "language": "pt-PT",
+    "text": "Que traços valorizas mais nos membros da tua família?"
+  },
+  {
+    "id": "q-0047",
+    "language": "pt-PT",
+    "text": "Qual é a tua tradição familiar favorita?"
+  },
+  {
+    "id": "q-0048",
+    "language": "pt-PT",
+    "text": "Queres ter uma família tua?"
+  },
+  {
+    "id": "q-0049",
+    "language": "pt-PT",
+    "text": "Se pudesses mudar a relação com um familiar, mudarias? Se sim, com quem?"
+  },
+  {
+    "id": "q-0050",
+    "language": "pt-PT",
+    "text": "A tua família costuma fazer viagens em conjunto?"
+  },
+  {
+    "id": "q-0051",
+    "language": "pt-PT",
+    "text": "What was it like growing up as the youngest/oldest/middle/only child?"
+  },
+  {
+    "id": "q-0052",
+    "language": "pt-PT",
+    "text": "Qual é a tua memória de família favorita?"
+  },
+  {
+    "id": "q-0053",
+    "language": "pt-PT",
+    "text": "Alguma vez desejaste ter sido educado de forma diferente?"
+  },
+  {
+    "id": "q-0054",
+    "language": "pt-PT",
+    "text": "Qual foi o melhor conselho que um familiar te deu?"
+  },
+  {
+    "id": "q-0055",
+    "language": "pt-PT",
+    "text": "Gostavas de ter mais irmãos? Se sim, porquê?"
+  },
+  {
+    "id": "q-0056",
+    "language": "pt-PT",
+    "text": "Alguma vez escondeste algo dos teus pais ou lhes mentiste?"
+  },
+  {
+    "id": "q-0057",
+    "language": "pt-PT",
+    "text": "Se tivesses um negócio de família, qual seria?"
+  },
+  {
+    "id": "q-0058",
+    "language": "pt-PT",
+    "text": "Como mostras à tua família que os amas?"
+  },
+  {
+    "id": "q-0059",
+    "language": "pt-PT",
+    "text": "Qual é a celebração mais importante que passas com a tua família e porquê?"
+  },
+  {
+    "id": "q-0060",
+    "language": "pt-PT",
+    "text": "Quem na tua família descreverias como uma verdadeira personagem?"
+  },
+  {
+    "id": "q-0061",
+    "language": "pt-PT",
+    "text": "O que é que a tua família ficaria surpreendida por saber sobre ti?"
+  },
+  {
+    "id": "q-0062",
+    "language": "pt-PT",
+    "text": "Em que familiar confias mais para te abrires?"
+  },
+  {
+    "id": "q-0063",
+    "language": "pt-PT",
+    "text": "Como lidas com discussões entre familiares?"
+  },
+  {
+    "id": "q-0064",
+    "language": "pt-PT",
+    "text": "Se tiveres filhos, como gostarias de os educar?"
+  },
+  {
+    "id": "q-0065",
+    "language": "pt-PT",
+    "text": "Tens amigos que consideras família?"
+  },
+  {
+    "id": "q-0066",
+    "language": "pt-PT",
+    "text": "A tua família já te pressionou a agir de certa forma?"
+  },
+  {
+    "id": "q-0067",
+    "language": "pt-PT",
+    "text": "Que traços de personalidade partilhas com os teus familiares?"
+  },
+  {
+    "id": "q-0068",
+    "language": "pt-PT",
+    "text": "Como é que os teus pais (e/ou avós) se conheceram?"
+  },
+  {
+    "id": "q-0069",
+    "language": "pt-PT",
+    "text": "O que te orgulha na tua família?"
+  },
+  {
+    "id": "q-0070",
+    "language": "pt-PT",
+    "text": "Qual é, para ti, um limite inegociável numa relação?"
+  },
+  {
+    "id": "q-0071",
+    "language": "pt-PT",
+    "text": "Se só pudesses ter um sentido (audição, tato, visão, etc.), qual escolherias?"
+  },
+  {
+    "id": "q-0072",
+    "language": "pt-PT",
+    "text": "Qual é a tua definição de sucesso?"
+  },
+  {
+    "id": "q-0073",
+    "language": "pt-PT",
+    "text": "Do que te orgulhas mais no último ano?"
+  },
+  {
+    "id": "q-0074",
+    "language": "pt-PT",
+    "text": "O que te faz sentir em paz?"
+  },
+  {
+    "id": "q-0075",
+    "language": "pt-PT",
+    "text": "Quem mais admiras no mundo?"
+  },
+  {
+    "id": "q-0076",
+    "language": "pt-PT",
+    "text": "Preferias ganhar mais dinheiro num trabalho que odeias ou menos num trabalho que adoras?"
+  },
+  {
+    "id": "q-0077",
+    "language": "pt-PT",
+    "text": "Qual é a primeira coisa que procuras num parceiro e/ou amigo?"
+  },
+  {
+    "id": "q-0078",
+    "language": "pt-PT",
+    "text": "Como mudou a tua perspetiva sobre o mundo ao longo do tempo?"
+  },
+  {
+    "id": "q-0079",
+    "language": "pt-PT",
+    "text": "Vives segundo algum conselho ou lema?"
+  },
+  {
+    "id": "q-0080",
+    "language": "pt-PT",
+    "text": "Como pode alguém conquistar a tua confiança?"
+  },
+  {
+    "id": "q-0081",
+    "language": "pt-PT",
+    "text": "Como pode alguém perder a tua confiança?"
+  },
+  {
+    "id": "q-0082",
+    "language": "pt-PT",
+    "text": "Preferias que alguém fosse honesto e te magoasse, ou que mentisse para te proteger?"
+  },
+  {
+    "id": "q-0083",
+    "language": "pt-PT",
+    "text": "Se pudesses estalar os dedos e tornar o mundo melhor de imediato, o que farias?"
+  },
+  {
+    "id": "q-0084",
+    "language": "pt-PT",
+    "text": "Acreditas em astrologia? Porquê ou por que não?"
+  },
+  {
+    "id": "q-0085",
+    "language": "pt-PT",
+    "text": "Já perdeste uma amizade? Se sim, o que aconteceu?"
+  },
+  {
+    "id": "q-0086",
+    "language": "pt-PT",
+    "text": "Se só pudesses ensinar uma coisa ao teu futuro filho, o que seria?"
+  },
+  {
+    "id": "q-0087",
+    "language": "pt-PT",
+    "text": "Qual foi a coisa mais assustadora que já fizeste, e por que a fizeste?"
+  },
+  {
+    "id": "q-0088",
+    "language": "pt-PT",
+    "text": "Acreditas em segundas oportunidades?"
+  },
+  {
+    "id": "q-0089",
+    "language": "pt-PT",
+    "text": "Onde te informas sobre as notícias?"
+  },
+  {
+    "id": "q-0090",
+    "language": "pt-PT",
+    "text": "Qual é o teu maior medo irracional?"
+  },
+  {
+    "id": "q-0091",
+    "language": "pt-PT",
+    "text": "És ativo nas redes sociais ou preferes ser mais reservado?"
+  },
+  {
+    "id": "q-0092",
+    "language": "pt-PT",
+    "text": "És dador de órgãos? Como chegaste a essa decisão?"
+  },
+  {
+    "id": "q-0093",
+    "language": "pt-PT",
+    "text": "O que achas que acontece depois da morte, se é que acontece algo?"
+  },
+  {
+    "id": "q-0094",
+    "language": "pt-PT",
+    "text": "Que limite nunca deveria ser ultrapassado contigo?"
+  },
+  {
+    "id": "q-0095",
+    "language": "pt-PT",
+    "text": "Como defines beleza?"
+  },
+  {
+    "id": "q-0096",
+    "language": "pt-PT",
+    "text": "Acreditas em vida noutros planetas?"
+  },
+  {
+    "id": "q-0097",
+    "language": "pt-PT",
+    "text": "Como interages com alguém que discorda de ti?"
+  },
+  {
+    "id": "q-0098",
+    "language": "pt-PT",
+    "text": "Se pudesses fazer qualquer coisa, além do que fazes agora, o que farias?"
+  },
+  {
+    "id": "q-0099",
+    "language": "pt-PT",
+    "text": "O que te arrependes de não ter feito no último ano?"
+  },
+  {
+    "id": "q-0100",
+    "language": "pt-PT",
+    "text": "O que está na tua lista de desejos?"
+  },
+  {
+    "id": "q-0101",
+    "language": "pt-PT",
+    "text": "Se tivesses dinheiro ilimitado para criar o teu próprio negócio, qual seria?"
+  },
+  {
+    "id": "q-0102",
+    "language": "pt-PT",
+    "text": "Se pudesses viver em qualquer lugar do mundo, onde seria?"
+  },
+  {
+    "id": "q-0103",
+    "language": "pt-PT",
+    "text": "Um génio concede-te três desejos. Quais seriam?"
+  },
+  {
+    "id": "q-0104",
+    "language": "pt-PT",
+    "text": "Se tivesses a oportunidade de ser imortal, aceitavas?"
+  },
+  {
+    "id": "q-0105",
+    "language": "pt-PT",
+    "text": "Se pudesses viajar no tempo, para quando e para onde ias?"
+  },
+  {
+    "id": "q-0106",
+    "language": "pt-PT",
+    "text": "Achas que vais concretizar todos os teus sonhos?"
+  },
+  {
+    "id": "q-0107",
+    "language": "pt-PT",
+    "text": "Se pudesses tornar-te famoso por magia, gostavas?"
+  },
+  {
+    "id": "q-0108",
+    "language": "pt-PT",
+    "text": "Se pudesses reviver um momento da tua vida, qual seria?"
+  },
+  {
+    "id": "q-0109",
+    "language": "pt-PT",
+    "text": "Se vires uma poça no chão, contornas ou passas por cima?"
+  },
+  {
+    "id": "q-0110",
+    "language": "pt-PT",
+    "text": "Se pudesses ter um superpoder, qual seria?"
+  },
+  {
+    "id": "q-0111",
+    "language": "pt-PT",
+    "text": "Se voltasses na próxima vida como um animal, qual serias?"
+  },
+  {
+    "id": "q-0112",
+    "language": "pt-PT",
+    "text": "Se pudesses dar nome a um novo país, como escolherias esse nome?"
+  },
+  {
+    "id": "q-0113",
+    "language": "pt-PT",
+    "text": "Carregas no snooze ou acordas logo à primeira?"
+  },
+  {
+    "id": "q-0114",
+    "language": "pt-PT",
+    "text": "Qual é a primeira coisa que fazes de manhã? E a última à noite?"
+  },
+  {
+    "id": "q-0115",
+    "language": "pt-PT",
+    "text": "Acreditas em alguma teoria da conspiração (sem julgamento)?"
+  },
+  {
+    "id": "q-0116",
+    "language": "pt-PT",
+    "text": "Qual seria o título das tuas memórias?"
+  },
+  {
+    "id": "q-0117",
+    "language": "pt-PT",
+    "text": "Achas que café gelado é só de verão ou para o ano todo?"
+  },
+  {
+    "id": "q-0118",
+    "language": "pt-PT",
+    "text": "Preferias estar coberto de pelo ou de escamas?"
+  },
+  {
+    "id": "q-0119",
+    "language": "pt-PT",
+    "text": "Para ti qual é a data perfeita? (Estação, altura do ano, tudo vale!)"
+  },
+  {
+    "id": "q-0120",
+    "language": "pt-PT",
+    "text": "Qual foi o lugar mais invulgar onde já adormeceste?"
+  },
+  {
+    "id": "q-0121",
+    "language": "pt-PT",
+    "text": "Numa festa, onde é que te encontramos?"
+  },
+  {
+    "id": "q-0122",
+    "language": "pt-PT",
+    "text": "Lavas as pernas no duche?"
+  },
+  {
+    "id": "q-0123",
+    "language": "pt-PT",
+    "text": "Quem te interpretaria no filme da tua vida?"
+  },
+  {
+    "id": "q-0124",
+    "language": "pt-PT",
+    "text": "Tens alguma alergia?"
+  },
+  {
+    "id": "q-0125",
+    "language": "pt-PT",
+    "text": "Confias na tua própria memória? Porquê ou por que não?"
+  },
+  {
+    "id": "q-0126",
+    "language": "pt-PT",
+    "text": "O que, se é que há algo, te faria sair a meio de um filme?"
+  },
+  {
+    "id": "q-0127",
+    "language": "pt-PT",
+    "text": "Quando foi a última vez que choraste e porquê?"
+  },
+  {
+    "id": "q-0128",
+    "language": "pt-PT",
+    "text": "Qual foi o teu fato de Halloween favorito de sempre?"
+  },
+  {
+    "id": "q-0129",
+    "language": "pt-PT",
+    "text": "Tens sonhos recorrentes?"
+  },
+  {
+    "id": "q-0130",
+    "language": "pt-PT",
+    "text": "Qual é a coisa mais estranha que fazes quando estás sozinho?"
+  },
+  {
+    "id": "q-0131",
+    "language": "pt-PT",
+    "text": "Qual foi a discussão mais parva em que já estiveste?"
+  },
+  {
+    "id": "q-0132",
+    "language": "pt-PT",
+    "text": "Qual foi a pior discussão em que já estiveste?"
+  },
+  {
+    "id": "q-0133",
+    "language": "pt-PT",
+    "text": "Se pudesses escolher como morrer, escolherias? Se sim, o quê?"
+  },
+  {
+    "id": "q-0134",
+    "language": "pt-PT",
+    "text": "Preferias ter a loiça ou a roupa magicamente limpa?"
+  },
+  {
+    "id": "q-0135",
+    "language": "pt-PT",
+    "text": "Qual foi a primeira coisa que quiseste ser quando crescesses?"
+  },
+  {
+    "id": "q-0136",
+    "language": "pt-PT",
+    "text": "Qual é o teu lugar menos favorito no mundo?"
+  },
+  {
+    "id": "q-0137",
+    "language": "pt-PT",
+    "text": "Qual é a tua história favorita sobre ti?"
+  },
+  {
+    "id": "q-0138",
+    "language": "pt-PT",
+    "text": "Se pudesses mudar alguma coisa em ti, mudarias? Se sim, o quê e porquê?"
+  },
+  {
+    "id": "q-0139",
+    "language": "pt-PT",
+    "text": "Antes de fazer uma chamada telefónica, ensaias o que vais dizer? Porquê?"
+  },
+  {
+    "id": "q-0140",
+    "language": "pt-PT",
+    "text": "Quando foi a última vez que cantaste para ti? E para outra pessoa?"
+  },
+  {
+    "id": "q-0141",
+    "language": "pt-PT",
+    "text": "Se pudesses viver até aos 90 e manter, nos últimos 60 anos, ou a mente ou o corpo de 30 anos, qual escolherias?"
+  },
+  {
+    "id": "q-0142",
+    "language": "pt-PT",
+    "text": "Tens um pressentimento secreto sobre como vais morrer?"
+  },
+  {
+    "id": "q-0143",
+    "language": "pt-PT",
+    "text": "Diz três coisas que tu e o teu parceiro parecem ter em comum."
+  },
+  {
+    "id": "q-0144",
+    "language": "pt-PT",
+    "text": "Pelo quê na tua vida te sentes mais grato?"
+  },
+  {
+    "id": "q-0145",
+    "language": "pt-PT",
+    "text": "Tens um pressentimento secreto sobre como vais morrer?"
+  },
+  {
+    "id": "q-0146",
+    "language": "pt-PT",
+    "text": "Se pudesses acordar amanhã com uma nova qualidade ou capacidade, qual escolherias?"
+  },
+  {
+    "id": "q-0147",
+    "language": "pt-PT",
+    "text": "Se uma bola de cristal te pudesse dizer a verdade sobre ti, sobre a tua vida, o futuro ou qualquer outra coisa, o que gostarias de saber?"
+  },
+  {
+    "id": "q-0148",
+    "language": "pt-PT",
+    "text": "Há algo que sonhas fazer há muito tempo? Porque ainda não o fizeste?"
+  },
+  {
+    "id": "q-0149",
+    "language": "pt-PT",
+    "text": "Se soubesses que daqui a um ano morrerias de repente, mudarias alguma coisa na forma como vives? Porquê?"
+  },
+  {
+    "id": "q-0150",
+    "language": "pt-PT",
+    "text": "O que, se é que há algo, é demasiado sério para brincar?"
+  },
+  {
+    "id": "q-0151",
+    "language": "pt-PT",
+    "text": "A tua casa, com tudo o que tens, está a arder. Depois de salvares as pessoas e animais que amas, tens tempo para voltar e salvar apenas um objeto. Qual seria? Porquê?"
+  },
+  {
+    "id": "q-0152",
+    "language": "pt-PT",
+    "text": "De todas as pessoas da tua família, a morte de quem te afetaria mais? Porquê?"
+  }
+]

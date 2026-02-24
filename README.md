@@ -23,30 +23,38 @@ Preserve the original full-screen, low-friction experience while preparing the p
 ## Repository Layout
 - `question-me-softly/` -> Next.js app (deploy root in Vercel)
 - `question-me-softly/src/app/play/` -> main gameplay UI
-- `question-me-softly/src/data/questions.json` -> structured question content
+- `question-me-softly/content/questions.json` -> canonical question IDs/types/source
+- `question-me-softly/content/en/questions.json` -> English text entries
+- `question-me-softly/content/pt-pt/questions.json` -> PT-PT text entries
+- `question-me-softly/content/pt-br/questions.json` -> PT-BR text entries
 - `question-me-softly/src/types/content.ts` -> core content and locale types
 - `question-me-softly/src/lib/locale.ts` -> locale detection/persistence helpers
 
 ## Content Model (Locale-Ready)
-Questions live in JSON and are keyed by stable IDs:
+Canonical question schema:
 
 ```json
 {
   "id": "q-0001",
   "type": "Likes and Dislikes",
-  "source": "https://...",
-  "text": {
-    "en": "What is your favorite way to spend a day off?",
-    "pt-PT": "",
-    "pt-BR": ""
-  }
+  "source": "https://..."
+}
+```
+
+Per-language entry schema:
+
+```json
+{
+  "id": "q-0001",
+  "language": "pt-PT",
+  "text": "Qual e a tua forma favorita de passar um dia de folga?"
 }
 ```
 
 Notes:
 - `id` must remain stable once published.
 - Keep `type` values consistent with color mapping.
-- Empty locale values fall back to English in the UI.
+- All locale files must contain the same set of `id`s.
 
 ## README Maintenance Rules
 Update this README whenever one of these changes:
