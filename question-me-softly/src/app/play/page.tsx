@@ -27,6 +27,7 @@ import styles from "./play.module.css";
 
 type CardState = {
   started: boolean;
+  exhausted: boolean;
   question?: QuestionRecord;
   backgroundColor: string;
   textColor: "black" | "white";
@@ -36,9 +37,25 @@ function pickRandom<T>(items: T[]): T {
   return items[Math.floor(Math.random() * items.length)];
 }
 
+function shuffle<T>(items: T[]): T[] {
+  const copy = [...items];
+
+  for (let i = copy.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+
+  return copy;
+}
+
 function PlayPageClient() {
   const searchParams = useSearchParams();
   const packId = resolvePackId(searchParams.get("pack"));
+
+  return <PlayExperience key={packId} packId={packId} />;
+}
+
+function PlayExperience({ packId }: { packId: ReturnType<typeof resolvePackId> }) {
   const packQuestions = useMemo(() => getQuestionsForPack(packId), [packId]);
 
   const colorByType = useMemo(
@@ -48,6 +65,7 @@ function PlayPageClient() {
 
   const [showHelp, setShowHelp] = useState(false);
   const [locale, setLocale] = useState<Locale>(() => resolveInitialLocale());
+  const [deck, setDeck] = useState<QuestionRecord[]>([]);
 
   useEffect(() => {
     window.localStorage.setItem(LOCALE_STORAGE_KEY, locale);
@@ -58,26 +76,56 @@ function PlayPageClient() {
 
     return {
       started: false,
+      exhausted: false,
       backgroundColor: openingColor,
       textColor: getContrastYIQ(openingColor),
     };
   });
+
+  const resetDeck = useCallback(() => {
+    const openingColor = pickRandom(colorsData).color;
+
+    setDeck(shuffle(packQuestions));
+    setCard({
+      started: false,
+      exhausted: false,
+      question: undefined,
+      backgroundColor: openingColor,
+      textColor: getContrastYIQ(openingColor),
+    });
+  }, [packQuestions]);
 
   const nextCard = useCallback(() => {
     if (showHelp) {
       return;
     }
 
-    const randomQuestion = pickRandom(packQuestions);
-    const backgroundColor = colorByType.get(randomQuestion.type) ?? "#70FFBF";
+    if (card.exhausted) {
+      return;
+    }
 
+    if (deck.length === 0) {
+      setCard((previous) => ({
+        ...previous,
+        started: true,
+        exhausted: true,
+        question: undefined,
+      }));
+      return;
+    }
+
+    const [nextQuestion, ...remaining] = deck;
+    const backgroundColor = colorByType.get(nextQuestion.type) ?? "#70FFBF";
+
+    setDeck(remaining);
     setCard({
       started: true,
-      question: randomQuestion,
+      exhausted: false,
+      question: nextQuestion,
       backgroundColor,
       textColor: getContrastYIQ(backgroundColor),
     });
-  }, [colorByType, packQuestions, showHelp]);
+  }, [card.exhausted, colorByType, deck, showHelp]);
 
   const onKeyDown = useCallback(
     (event: KeyboardEvent<HTMLElement>) => {
@@ -145,7 +193,24 @@ function PlayPageClient() {
         }}
       >
         <article className={styles.card}>
-          {card.started && card.question ? (
+          {card.started && card.exhausted ? (
+            <div className={styles.endState}>
+              <p className={styles.question}>That&apos;s all for now.</p>
+              <p className={styles.endMessage}>
+                Take a moment before starting again.
+              </p>
+              <button
+                type="button"
+                className={styles.restartButton}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  resetDeck();
+                }}
+              >
+                Start again
+              </button>
+            </div>
+          ) : card.started && card.question ? (
             <>
               <p className={styles.question}>{getQuestionText(card.question, locale)}</p>
               <h2 className={styles.type}>{card.question.type}</h2>
