@@ -119,7 +119,7 @@ function PlayExperience({ packId }: { packId: ReturnType<typeof resolvePackId> }
     }
 
     const [nextQuestion, ...remaining] = deck;
-    const backgroundColor = colorByType.get(nextQuestion.type) ?? "#70FFBF";
+    const backgroundColor = colorByType.get(nextQuestion.type) ?? "#1F6F8B";
 
     setDeck(remaining);
     setCard({

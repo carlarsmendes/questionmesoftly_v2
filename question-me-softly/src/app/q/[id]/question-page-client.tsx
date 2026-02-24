@@ -40,7 +40,7 @@ export default function QuestionPageClient({ id }: { id: string }) {
     return null;
   }
 
-  const backgroundColor = colorByType.get(question.type) ?? "#70FFBF";
+  const backgroundColor = colorByType.get(question.type) ?? "#1F6F8B";
   const textColor = getContrastYIQ(backgroundColor);
 
   const onShare = async () => {
