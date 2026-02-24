@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { colorsData } from "@/data/colors";
@@ -79,13 +80,17 @@ export default function QuestionPageClient({ id }: { id: string }) {
         ))}
       </nav>
 
+      <Link href="/" className={styles.homeButton} aria-label="Back to landing page">
+        Home
+      </Link>
+
       <button
         type="button"
         className={styles.shareButton}
         aria-label="Share question"
         onClick={onShare}
       >
-        ↗
+        Share
       </button>
 
       {shareFeedback ? <div className={styles.shareFeedback}>{shareFeedback}</div> : null}

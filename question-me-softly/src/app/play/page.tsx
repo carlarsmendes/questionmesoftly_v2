@@ -33,7 +33,7 @@ type CardState = {
   exhausted: boolean;
   question?: QuestionRecord;
   backgroundColor: string;
-  textColor: "black" | "white";
+  textColor: string;
 };
 
 function pickRandom<T>(items: T[]): T {
@@ -191,7 +191,7 @@ function PlayExperience({ packId }: { packId: ReturnType<typeof resolvePackId> }
             aria-label="Share question"
             onClick={onShareCurrentQuestion}
           >
-            ↗
+            Share
           </button>
           {shareFeedback ? <div className={styles.shareFeedback}>{shareFeedback}</div> : null}
         </>
