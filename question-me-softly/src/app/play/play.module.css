@@ -89,25 +89,27 @@
 
 .questionMark {
   font-size: 2.5rem;
-  border-radius: 4rem;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
   background-color: #3f3f3f;
   color: #fff;
-  padding: 15px 30px;
+  padding: 0;
   position: fixed;
   right: 0;
   top: 0;
   margin: 20px;
   z-index: 4;
-  text-align: center;
   cursor: pointer;
   border: 0;
   line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .showModal {
-  border-radius: 0;
-  margin: 0;
-  text-align: right;
+  border-radius: 50%;
 }
 
 .helpModal {
