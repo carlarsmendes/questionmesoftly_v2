@@ -15,6 +15,7 @@ import {
   LOCALE_STORAGE_KEY,
   resolveInitialLocale,
 } from "@/lib/locale";
+import { helpCopyByLocale } from "@/data/help-copy";
 import { SUPPORTED_LOCALES, type Locale, type QuestionRecord } from "@/types/content";
 import styles from "./play.module.css";
 
@@ -78,6 +79,8 @@ export default function PlayPage() {
     [nextCard],
   );
 
+  const helpCopy = helpCopyByLocale[locale] ?? helpCopyByLocale.en;
+
   return (
     <>
       <nav className={styles.localeSwitcher} aria-label="Language selector">
@@ -112,28 +115,9 @@ export default function PlayPage() {
       {showHelp ? (
         <section className={styles.helpModal} aria-live="polite">
           <div className={styles.helpContent}>
-            <p>What happens if we ask better questions?</p>
-            <br />
-            <p>Most of us think connection is something that simply happens.</p>
-            <p>But meaningful conversations are choices.</p>
-            <br />
-            <p>A choice to pause.</p>
-            <p>A choice to listen.</p>
-            <p>A choice to go beyond the expected.</p>
-            <br />
-            <p>Most conversations move fast.</p>
-            <p>This one doesn&apos;t have to.</p>
-            <br />
-            <p>Commit to the question in front of you.</p>
-            <p>Let it shift the tone of the room.</p>
-            <br />
-            <p>For friends.</p>
-            <p>For teams.</p>
-            <p>For partners.</p>
-            <p>Or for yourself.</p>
-            <br />
-            <p>Start with a question.</p>
-            <p>See where it leads.</p>
+            {helpCopy.map((line, index) =>
+              line.length === 0 ? <br key={`break-${index}`} /> : <p key={`line-${index}`}>{line}</p>,
+            )}
           </div>
         </section>
       ) : null}
