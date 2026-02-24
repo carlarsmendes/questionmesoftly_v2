@@ -65,7 +65,7 @@ function PlayExperience({ packId }: { packId: ReturnType<typeof resolvePackId> }
 
   const [showHelp, setShowHelp] = useState(false);
   const [locale, setLocale] = useState<Locale>(() => resolveInitialLocale());
-  const [deck, setDeck] = useState<QuestionRecord[]>([]);
+  const [deck, setDeck] = useState<QuestionRecord[]>(() => shuffle(packQuestions));
 
   useEffect(() => {
     window.localStorage.setItem(LOCALE_STORAGE_KEY, locale);
