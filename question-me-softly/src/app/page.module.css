@@ -1,32 +1,22 @@
 .page {
-  --accent-primary: #247ba0;
-  --accent-secondary: #69a2b0;
-  --accent-tertiary: #ff8c42;
+  --accent-primary: #61c9a8;
+  --accent-primary-hover: #4fb293;
   --text-main: #171717;
   --text-soft: #4b4b4b;
-  --divider: rgba(255, 140, 66, 0.34);
 
   min-height: 100svh;
   color: var(--text-main);
-  background: #f5f4ef;
+  background: #fff;
   font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
 }
 
 .band {
   width: 100%;
-  border-top: 1px solid var(--divider);
+  background: #fff;
 }
 
 .heroBand {
   border-top: 0;
-}
-
-.bandMuted {
-  background: #f0efea;
-}
-
-.finalBand {
-  background: #f7f6f2;
 }
 
 .inner {
@@ -49,12 +39,12 @@
   letter-spacing: 0.12em;
   color: var(--accent-primary);
   text-transform: uppercase;
-  border-bottom: 2px solid var(--accent-secondary);
+  border-bottom: 2px solid var(--accent-primary);
   padding-bottom: 0.25rem;
 }
 
 .headline {
-  font-size: clamp(2.15rem, 5.1vw, 3.5rem);
+  font-size: clamp(1.75rem, 4.2vw, 2.8rem);
   line-height: 1.1;
   font-weight: 650;
   letter-spacing: -0.02em;
@@ -82,8 +72,8 @@
 }
 
 .primaryCta:hover {
-  background: var(--accent-tertiary);
-  border-color: var(--accent-tertiary);
+  background: var(--accent-primary-hover);
+  border-color: var(--accent-primary-hover);
 }
 
 .languages {
@@ -108,7 +98,7 @@
   margin-bottom: 1.28rem;
   font-weight: 700;
   text-transform: uppercase;
-  border-bottom: 2px solid var(--accent-tertiary);
+  border-bottom: 2px solid var(--accent-primary);
   padding-bottom: 0.23rem;
 }
 
@@ -159,7 +149,7 @@
 }
 
 .footer {
-  border-top: 1px solid var(--divider);
+  border-top: 0;
   padding-top: 1.35rem;
   display: flex;
   flex-direction: column;
@@ -186,7 +176,7 @@
 }
 
 .footerLink:hover {
-  color: var(--accent-tertiary);
+  color: var(--accent-primary-hover);
 }
 
 @media (max-width: 640px) {
