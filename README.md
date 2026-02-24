@@ -10,20 +10,22 @@ Preserve the original full-screen, low-friction experience while preparing the p
 - [x] `/play` route with tap/click -> next card
 - [x] Type-based background color mapping
 - [x] YIQ contrast logic for readable text
-- [x] Original help modal (`?` button + overlay copy)
+- [x] Minimal deck controls (`Home`, locale toggle, share)
 - [x] Locale-ready content model with stable IDs
 - [x] Locale switcher (`en`, `pt-PT`, `pt-BR`)
 - [x] Locale persistence in `localStorage`
 - [x] Browser-language default locale resolution
 - [x] Pack-ready content architecture (`general` + `team`)
 - [x] Team Pack MVP deck via `/play?pack=team`
-- [ ] No-repeat finite deck + restart state
-- [ ] Shareable question routes (`/q/[id]`)
-- [ ] Landing page/SEO polish
+- [x] No-repeat finite deck + restart state
+- [x] Shareable question routes (`/q/[id]`) + native share/copy fallback
+- [x] Landing page with immersive brand style
+- [x] Privacy page route (`/privacy`)
 - [ ] Analytics
 
 ## Repository Layout
 - `question-me-softly/` -> Next.js app (deploy root in Vercel)
+- `question-me-softly/src/app/` -> app routes (`/`, `/play`, `/q/[id]`, `/privacy`)
 - `question-me-softly/src/app/play/` -> main gameplay UI
 - `question-me-softly/content/questions.json` -> canonical question IDs/types/source
 - `question-me-softly/content/packs/team.json` -> curated Team Pack deck IDs
@@ -32,6 +34,7 @@ Preserve the original full-screen, low-friction experience while preparing the p
 - `question-me-softly/content/pt-br/questions.json` -> PT-BR text entries
 - `question-me-softly/src/types/content.ts` -> core content and locale types
 - `question-me-softly/src/lib/locale.ts` -> locale detection/persistence helpers
+- `question-me-softly/src/lib/share-question.ts` -> share URL + native/copy share helper
 
 ## Content Model (Locale-Ready)
 Canonical question schema:
