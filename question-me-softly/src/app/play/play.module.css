@@ -148,13 +148,14 @@
 
   .helpModal {
     height: auto;
-    padding: 50px 20px;
-    line-height: 1.7rem;
+    padding: 40px 12px;
+    line-height: 1.5rem;
   }
 
   .helpContent {
-    max-width: 95vw;
-    font-size: 22px;
-    line-height: 28px;
+    max-width: 100%;
+    font-size: 17px;
+    line-height: 1.55;
+    padding-top: 20px;
   }
 }
