@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import {
   useCallback,
   useEffect,
@@ -30,7 +31,7 @@ function pickRandom<T>(items: T[]): T {
   return items[Math.floor(Math.random() * items.length)];
 }
 
-export default function PlayPage() {
+function PlayPageClient() {
   const colorByType = useMemo(
     () => new Map(colorsData.map((color) => [color.type, color.color])),
     [],
@@ -152,3 +153,7 @@ export default function PlayPage() {
     </>
   );
 }
+
+export default dynamic(async () => PlayPageClient, {
+  ssr: false,
+});
