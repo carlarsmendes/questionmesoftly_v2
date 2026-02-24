@@ -22,6 +22,7 @@ import {
   resolveInitialLocale,
 } from "@/lib/locale";
 import { helpCopyByLocale } from "@/data/help-copy";
+import { endStateCopyByLocale } from "@/data/end-state-copy";
 import { SUPPORTED_LOCALES, type Locale, type QuestionRecord } from "@/types/content";
 import styles from "./play.module.css";
 
@@ -138,6 +139,7 @@ function PlayExperience({ packId }: { packId: ReturnType<typeof resolvePackId> }
   );
 
   const helpCopy = helpCopyByLocale[locale] ?? helpCopyByLocale.en;
+  const endStateCopy = endStateCopyByLocale[locale] ?? endStateCopyByLocale.en;
 
   return (
     <>
@@ -195,10 +197,8 @@ function PlayExperience({ packId }: { packId: ReturnType<typeof resolvePackId> }
         <article className={styles.card}>
           {card.started && card.exhausted ? (
             <div className={styles.endState}>
-              <p className={styles.question}>That&apos;s all for now.</p>
-              <p className={styles.endMessage}>
-                Take a moment before starting again.
-              </p>
+              <p className={styles.question}>{endStateCopy.title}</p>
+              <p className={styles.endMessage}>{endStateCopy.message}</p>
               <button
                 type="button"
                 className={styles.restartButton}
@@ -207,7 +207,7 @@ function PlayExperience({ packId }: { packId: ReturnType<typeof resolvePackId> }
                   resetDeck();
                 }}
               >
-                Start again
+                {endStateCopy.restartLabel}
               </button>
             </div>
           ) : card.started && card.question ? (
