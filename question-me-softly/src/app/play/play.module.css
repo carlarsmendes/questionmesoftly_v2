@@ -111,29 +111,21 @@
   color: #fff;
 }
 
-.questionMark {
-  font-size: 2.5rem;
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background-color: #3f3f3f;
-  color: #fff;
-  padding: 0;
+.homeButton {
+  text-decoration: none;
+  border: 1px solid rgba(63, 63, 63, 0.22);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  color: #1f1f1f;
+  padding: 8px 12px;
   position: fixed;
   right: 0;
   top: 0;
   margin: 20px;
   z-index: 4;
-  cursor: pointer;
-  border: 0;
-  line-height: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.showModal {
-  border-radius: 50%;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
 }
 
 .shareButton {
@@ -169,32 +161,6 @@
   font-weight: 600;
 }
 
-.helpModal {
-  display: flex;
-  background-color: #3f3f3f;
-  width: 100vw;
-  min-height: 100svh;
-  z-index: 3;
-  color: #fff;
-  position: fixed;
-  inset: 0;
-  padding: 0 20px;
-  margin: 0 auto;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.7rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.helpContent {
-  max-width: 70vw;
-  margin: 0 auto;
-  text-align: left;
-  padding-top: 40px;
-}
-
 @media (max-width: 768px) {
   .card {
     max-width: 85vw;
@@ -202,6 +168,10 @@
   }
 
   .localeSwitcher {
+    margin: 12px;
+  }
+
+  .homeButton {
     margin: 12px;
   }
 
@@ -216,16 +186,4 @@
     bottom: 76px;
   }
 
-  .helpModal {
-    height: auto;
-    padding: 40px 12px;
-    line-height: 1.5rem;
-  }
-
-  .helpContent {
-    max-width: 100%;
-    font-size: 17px;
-    line-height: 1.55;
-    padding-top: 20px;
-  }
 }

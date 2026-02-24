@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import {
   useCallback,
@@ -22,7 +23,6 @@ import {
   LOCALE_STORAGE_KEY,
   resolveInitialLocale,
 } from "@/lib/locale";
-import { helpCopyByLocale } from "@/data/help-copy";
 import { endStateCopyByLocale } from "@/data/end-state-copy";
 import { shareQuestion } from "@/lib/share-question";
 import { SUPPORTED_LOCALES, type Locale, type QuestionRecord } from "@/types/content";
@@ -66,7 +66,6 @@ function PlayExperience({ packId }: { packId: ReturnType<typeof resolvePackId> }
     [],
   );
 
-  const [showHelp, setShowHelp] = useState(false);
   const [locale, setLocale] = useState<Locale>(() => resolveInitialLocale());
   const [deck, setDeck] = useState<QuestionRecord[]>(() => shuffle(packQuestions));
   const [shareFeedback, setShareFeedback] = useState<string | null>(null);
@@ -100,10 +99,6 @@ function PlayExperience({ packId }: { packId: ReturnType<typeof resolvePackId> }
   }, [packQuestions]);
 
   const nextCard = useCallback(() => {
-    if (showHelp) {
-      return;
-    }
-
     if (card.exhausted) {
       return;
     }
@@ -129,7 +124,7 @@ function PlayExperience({ packId }: { packId: ReturnType<typeof resolvePackId> }
       backgroundColor,
       textColor: getContrastYIQ(backgroundColor),
     });
-  }, [card.exhausted, colorByType, deck, showHelp]);
+  }, [card.exhausted, colorByType, deck]);
 
   const onKeyDown = useCallback(
     (event: KeyboardEvent<HTMLElement>) => {
@@ -141,7 +136,6 @@ function PlayExperience({ packId }: { packId: ReturnType<typeof resolvePackId> }
     [nextCard],
   );
 
-  const helpCopy = helpCopyByLocale[locale] ?? helpCopyByLocale.en;
   const endStateCopy = endStateCopyByLocale[locale] ?? endStateCopyByLocale.en;
 
   const onShareCurrentQuestion = useCallback(
@@ -185,27 +179,9 @@ function PlayExperience({ packId }: { packId: ReturnType<typeof resolvePackId> }
         ))}
       </nav>
 
-      <button
-        type="button"
-        className={`${styles.questionMark} ${showHelp ? styles.showModal : ""}`}
-        aria-label={showHelp ? "Close help" : "Open help"}
-        onClick={(event) => {
-          event.stopPropagation();
-          setShowHelp((value) => !value);
-        }}
-      >
-        {showHelp ? "x" : "?"}
-      </button>
-
-      {showHelp ? (
-        <section className={styles.helpModal} aria-live="polite">
-          <div className={styles.helpContent}>
-            {helpCopy.map((line, index) =>
-              line.length === 0 ? <br key={`break-${index}`} /> : <p key={`line-${index}`}>{line}</p>,
-            )}
-          </div>
-        </section>
-      ) : null}
+      <Link href="/" className={styles.homeButton} aria-label="Back to landing page">
+        Home
+      </Link>
 
       {card.started && card.question && !card.exhausted ? (
         <>
