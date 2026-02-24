@@ -1,111 +1,107 @@
+"use client";
+
+import dynamic from "next/dynamic";
 import Link from "next/link";
+import { useMemo } from "react";
+import { colorsData } from "@/data/colors";
 import styles from "./page.module.css";
 
-export default function Home() {
+function pickRandomColor() {
+  return colorsData[Math.floor(Math.random() * colorsData.length)].color;
+}
+
+function LandingPageClient() {
+  const backgroundColor = useMemo(() => pickRandomColor(), []);
+
   return (
-    <main className={styles.page}>
-      <section className={`${styles.band} ${styles.heroBand}`}>
-        <div className={styles.inner}>
-          <div className={styles.hero}>
-            <p className={styles.brand}>Question Me Softly</p>
-            <h1 className={styles.headline}>What happens if we ask better questions?</h1>
-            <p className={styles.subhead}>
-              A curated deck of reflective prompts
-              <br />
-              for friends, teams, partners, or yourself.
-            </p>
-            <Link href="/play" className={styles.primaryCta}>
-              Start a conversation
-            </Link>
-            <p className={styles.languages}>Available in EN · PT-PT · PT-BR</p>
-          </div>
-        </div>
-      </section>
+    <main className={styles.page} style={{ backgroundColor }}>
+      <div className={styles.inner}>
+        <section className={styles.hero}>
+          <h1 className={styles.headline}>What happens if we ask better questions?</h1>
+          <p className={styles.paragraph}>
+            A warm deck of prompts designed to spark
+            <br />
+            thoughtful conversations — and unexpected ones.
+          </p>
+          <Link href="/play" className={styles.primaryCta} style={{ color: backgroundColor }}>
+            Start a conversation
+          </Link>
+          <p className={styles.meta}>Available in EN · PT-PT · PT-BR</p>
+        </section>
 
-      <section className={styles.band}>
-        <div className={styles.inner}>
-          <div className={styles.section}>
-            <p className={styles.label}>WHY THIS EXISTS</p>
-            <div className={styles.body}>
-              <p>Most of us think connection is something that simply happens.</p>
-              <p>But meaningful conversations are choices.</p>
-              <br />
-              <p>A choice to pause.</p>
-              <p>A choice to listen.</p>
-              <p>A choice to go beyond the expected.</p>
-              <br />
-              <p>Most conversations move fast.</p>
-              <p>This one doesn&apos;t have to.</p>
-              <br />
-              <p>Commit to the question in front of you.</p>
-              <p>Let it shift the tone of the room.</p>
-              <br />
-              <p>For friends.</p>
-              <p>For teams.</p>
-              <p>For partners.</p>
-              <p>Or for yourself.</p>
-              <br />
-              <p>Begin with a question.</p>
-              <p>See where it leads.</p>
-            </div>
+        <section className={styles.section}>
+          <div className={styles.body}>
+            <p>Most of us think connection just happens.</p>
+            <p>But the best conversations are chosen.</p>
+            <br />
+            <p>A choice to pause.</p>
+            <p>A choice to listen.</p>
+            <p>A choice to go a little further than usual.</p>
+            <br />
+            <p>Some questions are light.</p>
+            <p>Some go deeper.</p>
+            <br />
+            <p>All of them open something.</p>
+            <br />
+            <p>Commit to the question in front of you.</p>
+            <p>Let it shift the tone of the room.</p>
+            <br />
+            <p>For friends.</p>
+            <p>For teams.</p>
+            <p>For partners.</p>
+            <p>Or for yourself.</p>
+            <br />
+            <p>Start with a question.</p>
+            <p>See where it leads.</p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className={`${styles.band} ${styles.bandMuted}`}>
-        <div className={styles.inner}>
-          <div className={`${styles.section} ${styles.sectionLight}`}>
-            <p className={styles.label}>HOW IT WORKS</p>
-            <div className={styles.bodyLight}>
-              <p>Draw a question.</p>
-              <p>Answer — or pass.</p>
-              <p>Stay with what opens.</p>
-              <br />
-              <p>No timers.</p>
-              <p>No scores.</p>
-              <p>No right answers.</p>
-            </div>
+        <section className={styles.section}>
+          <h2 className={styles.label}>How it works</h2>
+          <div className={styles.bodyLight}>
+            <p>Draw a question.</p>
+            <p>Answer, or pass.</p>
+            <br />
+            <p>No timers.</p>
+            <p>No scores.</p>
+            <p>No right answers.</p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className={styles.band}>
-        <div className={styles.inner}>
-          <div className={`${styles.section} ${styles.sectionLight}`}>
-            <p className={styles.label}>MADE FOR</p>
-            <ul className={styles.list}>
-              <li>Friends</li>
-              <li>Teams</li>
-              <li>Partners</li>
-              <li>Solo reflection</li>
-            </ul>
-            <p className={styles.note}>
-              The same question can feel different
-              <br />
-              depending on who&apos;s in the room.
-            </p>
-          </div>
-        </div>
-      </section>
+        <section className={styles.section}>
+          <h2 className={styles.label}>Bring it to the table.</h2>
+          <ul className={styles.list}>
+            <li>Friends</li>
+            <li>Teams</li>
+            <li>Partners</li>
+            <li>Solo reflection</li>
+          </ul>
+          <p className={styles.paragraph}>
+            The same question feels different
+            <br />
+            depending on who&apos;s there.
+          </p>
+        </section>
 
-      <section className={`${styles.band} ${styles.finalBand}`}>
-        <div className={styles.inner}>
-          <div className={styles.finalCta}>
-            <h2 className={styles.finalLine}>Start with a question.</h2>
-            <Link href="/play" className={styles.primaryCta}>
-              Begin
-            </Link>
-          </div>
+        <section className={styles.finalCta}>
+          <h2 className={styles.finalLine}>Let&apos;s begin.</h2>
+          <Link href="/play" className={styles.primaryCta} style={{ color: backgroundColor }}>
+            Take a question
+          </Link>
+        </section>
 
-          <footer className={styles.footer}>
-            <p className={styles.footerBrand}>Question Me Softly</p>
-            <p className={styles.footerMeta}>Available in EN · PT-PT · PT-BR</p>
-            <Link href="/privacy" className={styles.footerLink}>
-              Privacy
-            </Link>
-          </footer>
-        </div>
-      </section>
+        <footer className={styles.footer}>
+          <p className={styles.footerBrand}>Question Me Softly</p>
+          <p className={styles.meta}>Available in EN · PT-PT · PT-BR</p>
+          <Link href="/privacy" className={styles.footerLink}>
+            Privacy
+          </Link>
+        </footer>
+      </div>
     </main>
   );
 }
+
+export default dynamic(async () => LandingPageClient, {
+  ssr: false,
+});
