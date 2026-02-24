@@ -64,6 +64,14 @@ export function getQuestionsForPack(packId: PackId): QuestionRecord[] {
   return questions.filter((question) => question.packs.includes("general"));
 }
 
+export function hasQuestionId(id: string): boolean {
+  return questionsById.has(id);
+}
+
+export function getQuestionById(id: string): QuestionRecord | undefined {
+  return questionsById.get(id);
+}
+
 export function getQuestionText(question: QuestionRecord, locale: Locale): string {
   const localized = question.text[locale]?.trim();
   return localized && localized.length > 0 ? localized : question.text.en;

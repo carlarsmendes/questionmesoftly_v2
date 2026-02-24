@@ -8,6 +8,7 @@ import {
   useMemo,
   useState,
   type KeyboardEvent,
+  type MouseEvent,
 } from "react";
 import { colorsData } from "@/data/colors";
 import {
@@ -23,6 +24,7 @@ import {
 } from "@/lib/locale";
 import { helpCopyByLocale } from "@/data/help-copy";
 import { endStateCopyByLocale } from "@/data/end-state-copy";
+import { shareQuestion } from "@/lib/share-question";
 import { SUPPORTED_LOCALES, type Locale, type QuestionRecord } from "@/types/content";
 import styles from "./play.module.css";
 
@@ -67,6 +69,7 @@ function PlayExperience({ packId }: { packId: ReturnType<typeof resolvePackId> }
   const [showHelp, setShowHelp] = useState(false);
   const [locale, setLocale] = useState<Locale>(() => resolveInitialLocale());
   const [deck, setDeck] = useState<QuestionRecord[]>(() => shuffle(packQuestions));
+  const [shareFeedback, setShareFeedback] = useState<string | null>(null);
 
   useEffect(() => {
     window.localStorage.setItem(LOCALE_STORAGE_KEY, locale);
@@ -141,6 +144,28 @@ function PlayExperience({ packId }: { packId: ReturnType<typeof resolvePackId> }
   const helpCopy = helpCopyByLocale[locale] ?? helpCopyByLocale.en;
   const endStateCopy = endStateCopyByLocale[locale] ?? endStateCopyByLocale.en;
 
+  const onShareCurrentQuestion = useCallback(
+    async (event: MouseEvent<HTMLButtonElement>) => {
+      event.stopPropagation();
+
+      if (!card.question) {
+        return;
+      }
+
+      const method = await shareQuestion({
+        questionId: card.question.id,
+        locale,
+        text: getQuestionText(card.question, locale),
+      });
+
+      if (method === "copy_link") {
+        setShareFeedback("Link copied");
+        window.setTimeout(() => setShareFeedback(null), 1800);
+      }
+    },
+    [card.question, locale],
+  );
+
   return (
     <>
       <nav className={styles.localeSwitcher} aria-label="Language selector">
@@ -180,6 +205,20 @@ function PlayExperience({ packId }: { packId: ReturnType<typeof resolvePackId> }
             )}
           </div>
         </section>
+      ) : null}
+
+      {card.started && card.question && !card.exhausted ? (
+        <>
+          <button
+            type="button"
+            className={styles.shareButton}
+            aria-label="Share question"
+            onClick={onShareCurrentQuestion}
+          >
+            ↗
+          </button>
+          {shareFeedback ? <div className={styles.shareFeedback}>{shareFeedback}</div> : null}
+        </>
       ) : null}
 
       <main
