@@ -5,6 +5,7 @@ export default function Home() {
   return (
     <main className={styles.page}>
       <section className={styles.hero}>
+        <p className={styles.brand}>Question Me Softly</p>
         <h1 className={styles.headline}>What happens if we ask better questions?</h1>
         <p className={styles.subhead}>
           A curated deck of reflective prompts
@@ -43,7 +44,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.sectionLight}>
+      <section className={`${styles.section} ${styles.sectionLight}`}>
         <p className={styles.label}>HOW IT WORKS</p>
         <div className={styles.bodyLight}>
           <p>Draw a question.</p>
@@ -56,7 +57,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.sectionLight}>
+      <section className={`${styles.section} ${styles.sectionLight}`}>
         <p className={styles.label}>MADE FOR</p>
         <ul className={styles.list}>
           <li>Friends</li>
@@ -77,6 +78,14 @@ export default function Home() {
           Begin
         </Link>
       </section>
+
+      <footer className={styles.footer}>
+        <p className={styles.footerBrand}>Question Me Softly</p>
+        <p className={styles.footerMeta}>Available in EN · PT-PT · PT-BR</p>
+        <Link href="/privacy" className={styles.footerLink}>
+          Privacy
+        </Link>
+      </footer>
     </main>
   );
 }
