@@ -24,6 +24,7 @@ import {
   resolveInitialLocale,
 } from "@/lib/locale";
 import { endStateCopyByLocale } from "@/data/end-state-copy";
+import { trackEvent } from "@/lib/analytics";
 import { shareQuestion } from "@/lib/share-question";
 import { SUPPORTED_LOCALES, type Locale, type QuestionRecord } from "@/types/content";
 import styles from "./play.module.css";
@@ -116,6 +117,12 @@ function PlayExperience({ packId }: { packId: ReturnType<typeof resolvePackId> }
     const [nextQuestion, ...remaining] = deck;
     const backgroundColor = colorByType.get(nextQuestion.type) ?? "#1F6F8B";
 
+    trackEvent("question_next", {
+      question_id: nextQuestion.id,
+      locale,
+      pack: packId,
+    });
+
     setDeck(remaining);
     setCard({
       started: true,
@@ -124,7 +131,7 @@ function PlayExperience({ packId }: { packId: ReturnType<typeof resolvePackId> }
       backgroundColor,
       textColor: getContrastYIQ(backgroundColor),
     });
-  }, [card.exhausted, colorByType, deck]);
+  }, [card.exhausted, colorByType, deck, locale, packId]);
 
   const onKeyDown = useCallback(
     (event: KeyboardEvent<HTMLElement>) => {
@@ -152,12 +159,19 @@ function PlayExperience({ packId }: { packId: ReturnType<typeof resolvePackId> }
         text: getQuestionText(card.question, locale),
       });
 
+      trackEvent("share_click", {
+        question_id: card.question.id,
+        locale,
+        pack: packId,
+        method,
+      });
+
       if (method === "copy_link") {
         setShareFeedback("Link copied");
         window.setTimeout(() => setShareFeedback(null), 1800);
       }
     },
-    [card.question, locale],
+    [card.question, locale, packId],
   );
 
   return (
@@ -170,6 +184,14 @@ function PlayExperience({ packId }: { packId: ReturnType<typeof resolvePackId> }
             className={`${styles.localeButton} ${locale === nextLocale ? styles.localeButtonActive : ""}`}
             onClick={(event) => {
               event.stopPropagation();
+              if (locale !== nextLocale) {
+                trackEvent("language_change", {
+                  from: locale,
+                  to: nextLocale,
+                  surface: "play",
+                  pack: packId,
+                });
+              }
               setLocale(nextLocale);
             }}
             aria-pressed={locale === nextLocale}
@@ -219,6 +241,10 @@ function PlayExperience({ packId }: { packId: ReturnType<typeof resolvePackId> }
                 className={styles.restartButton}
                 onClick={(event) => {
                   event.stopPropagation();
+                  trackEvent("deck_restart", {
+                    locale,
+                    pack: packId,
+                  });
                   resetDeck();
                 }}
               >

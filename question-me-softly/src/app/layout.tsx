@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
@@ -44,7 +45,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="94253d0f-45ae-423d-b513-8d4b304ef5c9"
+          strategy="afterInteractive"
+        />
+        {children}
+      </body>
     </html>
   );
 }

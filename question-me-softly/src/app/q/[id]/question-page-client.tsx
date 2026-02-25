@@ -13,6 +13,7 @@ import {
   resolveInitialLocale,
 } from "@/lib/locale";
 import { shareQuestion } from "@/lib/share-question";
+import { trackEvent } from "@/lib/analytics";
 import { SUPPORTED_LOCALES, type Locale } from "@/types/content";
 import styles from "@/app/play/play.module.css";
 
@@ -63,6 +64,13 @@ export default function QuestionPageClient({ id }: { id: string }) {
       text: getQuestionText(question, locale),
     });
 
+    trackEvent("share_click", {
+      question_id: question.id,
+      locale,
+      pack: "shared",
+      method,
+    });
+
     if (method === "copy_link") {
       setShareFeedback("Link copied");
       window.setTimeout(() => setShareFeedback(null), 1800);
@@ -90,6 +98,14 @@ export default function QuestionPageClient({ id }: { id: string }) {
             className={`${styles.localeButton} ${locale === nextLocale ? styles.localeButtonActive : ""}`}
             onClick={(event) => {
               event.stopPropagation();
+              if (locale !== nextLocale) {
+                trackEvent("language_change", {
+                  from: locale,
+                  to: nextLocale,
+                  surface: "shared_question",
+                  pack: "shared",
+                });
+              }
               setLocale(nextLocale);
             }}
             aria-pressed={locale === nextLocale}

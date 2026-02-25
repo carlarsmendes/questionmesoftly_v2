@@ -16,8 +16,8 @@ export default function PrivacyPage() {
         personal profile data in this version.
       </p>
       <p style={{ marginTop: "0.9rem" }}>
-        If analytics are added in future releases, this page will be updated
-        with clear details on what is tracked and why.
+        We use anonymous usage analytics (Umami) to understand product usage
+        patterns, such as shares, language changes, and deck restarts.
       </p>
     </main>
   );

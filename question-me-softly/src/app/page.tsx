@@ -93,6 +93,7 @@ function LandingPageClient() {
         <footer className={styles.footer}>
           <p className={styles.footerBrand}>Question Me Softly</p>
           <p className={styles.meta}>Available in EN · PT-PT · PT-BR</p>
+          <p className={styles.meta}>Anonymous usage analytics enabled.</p>
           <Link href="/privacy" className={styles.footerLink}>
             Privacy
           </Link>
