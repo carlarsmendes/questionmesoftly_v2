@@ -118,6 +118,17 @@
   font-weight: 500;
 }
 
+.easterEgg {
+  width: fit-content;
+  margin-top: 0.45rem;
+  color: #f7f4ef;
+  text-decoration: none;
+  font-size: 0.76rem;
+  line-height: 1.6;
+  font-weight: 500;
+  opacity: 0.64;
+}
+
 @media (max-width: 640px) {
   .inner {
     padding: 92px 18px 72px;

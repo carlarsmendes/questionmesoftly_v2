@@ -96,6 +96,9 @@ function LandingPageClient() {
           <Link href="/privacy" className={styles.footerLink}>
             Privacy
           </Link>
+          <Link href="/play?pack=team" className={styles.easterEgg}>
+            Special experience for amazing teams
+          </Link>
         </footer>
       </div>
     </main>
