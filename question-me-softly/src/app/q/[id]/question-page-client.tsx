@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useEffect, useMemo, useState, type KeyboardEvent } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { colorsData } from "@/data/colors";
 import { getQuestionById, getQuestionText } from "@/data/questions";
 import { getContrastYIQ } from "@/lib/contrast";
@@ -17,6 +17,7 @@ import { SUPPORTED_LOCALES, type Locale } from "@/types/content";
 import styles from "@/app/play/play.module.css";
 
 export default function QuestionPageClient({ id }: { id: string }) {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const forcedLocale = searchParams.get("lang");
 
@@ -44,6 +45,17 @@ export default function QuestionPageClient({ id }: { id: string }) {
   const backgroundColor = colorByType.get(question.type) ?? "#1F6F8B";
   const textColor = getContrastYIQ(backgroundColor);
 
+  const goToDeckStart = () => {
+    router.push("/play");
+  };
+
+  const onKeyDown = (event: KeyboardEvent<HTMLElement>) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      goToDeckStart();
+    }
+  };
+
   const onShare = async () => {
     const method = await shareQuestion({
       questionId: question.id,
@@ -60,10 +72,14 @@ export default function QuestionPageClient({ id }: { id: string }) {
   return (
     <main
       className={styles.stage}
+      onClick={goToDeckStart}
+      onKeyDown={onKeyDown}
+      role="button"
+      tabIndex={0}
+      aria-label="Start deck from this shared question"
       style={{
         backgroundColor,
         color: textColor,
-        cursor: "default",
       }}
     >
       <nav className={styles.localeSwitcher} aria-label="Language selector">
@@ -72,7 +88,10 @@ export default function QuestionPageClient({ id }: { id: string }) {
             key={nextLocale}
             type="button"
             className={`${styles.localeButton} ${locale === nextLocale ? styles.localeButtonActive : ""}`}
-            onClick={() => setLocale(nextLocale)}
+            onClick={(event) => {
+              event.stopPropagation();
+              setLocale(nextLocale);
+            }}
             aria-pressed={locale === nextLocale}
           >
             {LOCALE_LABELS[nextLocale]}
@@ -80,7 +99,12 @@ export default function QuestionPageClient({ id }: { id: string }) {
         ))}
       </nav>
 
-      <Link href="/" className={styles.homeButton} aria-label="Back to landing page">
+      <Link
+        href="/"
+        className={styles.homeButton}
+        aria-label="Back to landing page"
+        onClick={(event) => event.stopPropagation()}
+      >
         Home
       </Link>
 
@@ -88,7 +112,10 @@ export default function QuestionPageClient({ id }: { id: string }) {
         type="button"
         className={styles.shareButton}
         aria-label="Share question"
-        onClick={onShare}
+        onClick={(event) => {
+          event.stopPropagation();
+          void onShare();
+        }}
       >
         Share
       </button>
