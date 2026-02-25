@@ -17,6 +17,7 @@ export type QuestionBase = {
   type: QuestionType;
   source: string;
   packs: PackId[];
+  isActive: boolean;
 };
 
 export type QuestionTranslation = {

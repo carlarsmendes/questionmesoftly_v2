@@ -32,14 +32,16 @@ const enById = buildTextMap(en, "en");
 const ptPtById = buildTextMap(ptPt, "pt-PT");
 const ptBrById = buildTextMap(ptBr, "pt-BR");
 
-export const questions: QuestionRecord[] = questionBase.map((question) => ({
-  ...question,
-  text: {
-    en: enById.get(question.id) ?? "",
-    "pt-PT": ptPtById.get(question.id) ?? "",
-    "pt-BR": ptBrById.get(question.id) ?? "",
-  },
-}));
+export const questions: QuestionRecord[] = questionBase
+  .filter((question) => question.isActive)
+  .map((question) => ({
+    ...question,
+    text: {
+      en: enById.get(question.id) ?? "",
+      "pt-PT": ptPtById.get(question.id) ?? "",
+      "pt-BR": ptBrById.get(question.id) ?? "",
+    },
+  }));
 
 const questionsById = new Map(questions.map((question) => [question.id, question]));
 
