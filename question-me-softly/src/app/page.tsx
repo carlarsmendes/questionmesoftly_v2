@@ -90,6 +90,31 @@ function LandingPageClient() {
           </Link>
         </section>
 
+        <section className={styles.supportSection}>
+          <h2 className={styles.supportHeading}>Support the deck</h2>
+          <p className={styles.supportCopy}>
+            If this meant something to you,
+            <br />
+            you can help keep it going.
+          </p>
+          <p className={styles.supportCopy}>
+            I&apos;m a developer who believes good products,
+            <br />
+            (like good books and good workouts)
+            <br />
+            should challenge you just enough to make you grow.
+          </p>
+          <a
+            href="https://buymeacoffee.com/carlarsmen8"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.supportCta}
+            style={{ color: backgroundColor }}
+          >
+            Buy me a coffee
+          </a>
+        </section>
+
         <footer className={styles.footer}>
           <p className={styles.footerBrand}>Question Me Softly</p>
           <p className={styles.meta}>Available in EN · PT-PT · PT-BR</p>
