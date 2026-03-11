@@ -25,6 +25,7 @@ import {
 } from "@/lib/locale";
 import { endStateCopyByLocale } from "@/data/end-state-copy";
 import { trackEvent } from "@/lib/analytics";
+import { getQuestionTypeLabel } from "@/lib/question-type-label";
 import { shareQuestion } from "@/lib/share-question";
 import { SUPPORTED_LOCALES, type Locale, type QuestionRecord } from "@/types/content";
 import styles from "./play.module.css";
@@ -254,7 +255,7 @@ function PlayExperience({ packId }: { packId: ReturnType<typeof resolvePackId> }
           ) : card.started && card.question ? (
             <>
               <p className={styles.question}>{getQuestionText(card.question, locale)}</p>
-              <h2 className={styles.type}>{card.question.type}</h2>
+              <h2 className={styles.type}>{getQuestionTypeLabel(card.question.type, locale)}</h2>
             </>
           ) : (
             <>

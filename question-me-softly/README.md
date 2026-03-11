@@ -24,7 +24,10 @@ Question Me Softly is a minimalist conversation deck designed for reflective pro
 ## Analytics
 Umami is integrated globally and tracks anonymous usage analytics.
 
+Status: configured and actively tracking in production.
+
 Tracked events:
+- `pageview` (automatic via Umami script)
 - `language_change`
 - `deck_restart`
 - `share_click`

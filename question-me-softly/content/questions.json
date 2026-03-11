@@ -915,24 +915,6 @@
     "isActive": true
   },
   {
-    "id": "q-0099",
-    "type": "Dreams",
-    "source": "https://www.womenshealthmag.com/life/a22500573/questions-to-ask-to-get-to-know-someone/",
-    "packs": [
-      "general"
-    ],
-    "isActive": true
-  },
-  {
-    "id": "q-0100",
-    "type": "Dreams",
-    "source": "https://www.womenshealthmag.com/life/a22500573/questions-to-ask-to-get-to-know-someone/",
-    "packs": [
-      "general"
-    ],
-    "isActive": true
-  },
-  {
     "id": "q-0101",
     "type": "Dreams",
     "source": "https://www.womenshealthmag.com/life/a22500573/questions-to-ask-to-get-to-know-someone/",
@@ -1041,7 +1023,7 @@
     "packs": [
       "general"
     ],
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "q-0113",
@@ -1223,7 +1205,7 @@
     "packs": [
       "general"
     ],
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "q-0133",
@@ -1331,16 +1313,7 @@
     "packs": [
       "general"
     ],
-    "isActive": true
-  },
-  {
-    "id": "q-0145",
-    "type": "Unconventional questions",
-    "source": "https://www.inc.com/melanie-curtin/the-36-questions-scientists-say-can-make-any-two-people-fall-in-love.html",
-    "packs": [
-      "general"
-    ],
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "q-0146",
@@ -1349,7 +1322,7 @@
     "packs": [
       "general"
     ],
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "q-0147",
@@ -1368,7 +1341,7 @@
       "general",
       "team"
     ],
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "q-0149",
@@ -1395,7 +1368,7 @@
     "packs": [
       "general"
     ],
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "q-0152",
@@ -1530,7 +1503,7 @@
     "packs": [
       "general"
     ],
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "q-0167",
@@ -1539,7 +1512,7 @@
     "packs": [
       "general"
     ],
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "q-0168",
@@ -1548,6 +1521,6 @@
     "packs": [
       "general"
     ],
-    "isActive": true
+    "isActive": false
   }
 ]

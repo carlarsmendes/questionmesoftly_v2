@@ -14,6 +14,7 @@ import {
 } from "@/lib/locale";
 import { shareQuestion } from "@/lib/share-question";
 import { trackEvent } from "@/lib/analytics";
+import { getQuestionTypeLabel } from "@/lib/question-type-label";
 import { SUPPORTED_LOCALES, type Locale } from "@/types/content";
 import styles from "@/app/play/play.module.css";
 
@@ -140,7 +141,7 @@ export default function QuestionPageClient({ id }: { id: string }) {
 
       <article className={styles.card}>
         <p className={styles.question}>{getQuestionText(question, locale)}</p>
-        <h2 className={styles.type}>{question.type}</h2>
+        <h2 className={styles.type}>{getQuestionTypeLabel(question.type, locale)}</h2>
       </article>
     </main>
   );

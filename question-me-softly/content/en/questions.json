@@ -490,16 +490,6 @@
     "text": "If you could do anything, besides what you're doing now, what would you do?"
   },
   {
-    "id": "q-0099",
-    "language": "en",
-    "text": "What do you regret not doing in the last year?"
-  },
-  {
-    "id": "q-0100",
-    "language": "en",
-    "text": "What’s on your bucket list?"
-  },
-  {
     "id": "q-0101",
     "language": "en",
     "text": "If you had unlimited money to start your own business, what would it be?"
@@ -718,11 +708,6 @@
     "id": "q-0144",
     "language": "en",
     "text": "For what in your life do you feel most grateful?"
-  },
-  {
-    "id": "q-0145",
-    "language": "en",
-    "text": "Do you have a secret hunch about how you will die?"
   },
   {
     "id": "q-0146",

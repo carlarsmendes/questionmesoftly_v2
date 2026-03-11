@@ -5,9 +5,37 @@
 }
 
 .inner {
+  position: relative;
   max-width: 720px;
   margin: 0 auto;
   padding: 124px 24px 96px;
+}
+
+.localeSwitcher {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  display: inline-flex;
+  gap: 0.35rem;
+  z-index: 2;
+}
+
+.localeButton {
+  appearance: none;
+  border: 1px solid rgba(247, 244, 239, 0.35);
+  background: transparent;
+  color: #f7f4ef;
+  border-radius: 999px;
+  padding: 0.22rem 0.6rem;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.localeButtonActive {
+  background: rgba(247, 244, 239, 0.18);
+  border-color: rgba(247, 244, 239, 0.55);
 }
 
 .hero {
@@ -164,6 +192,11 @@
 @media (max-width: 640px) {
   .inner {
     padding: 92px 18px 72px;
+  }
+
+  .localeSwitcher {
+    top: 14px;
+    right: 16px;
   }
 
   .hero {
