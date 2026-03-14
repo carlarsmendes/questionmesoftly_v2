@@ -3,23 +3,26 @@
 Question Me Softly is a minimalist conversation deck designed for reflective prompts across friends, teams, partners, or solo use.
 
 ## Current Product Scope
-- Landing page at `/` with manifesto-style brand copy
+- Landing page at `/` with multilingual brand copy and support section
 - Main deck at `/play` with tap/click-to-next full-screen interaction
-- Shareable question route at `/q/[id]`
+- Shareable question route at `/q/[id]` (opens exact question and allows continuing to deck)
 - Privacy page at `/privacy`
 
 ## Implemented Features
 - Stable question IDs and structured content model
 - Locale support: `en`, `pt-PT`, `pt-BR`
-- Locale toggle with persistence via `localStorage`
+- Locale toggle on landing, deck, and shared-question screens
+- Locale persistence via `localStorage`
 - Browser-language locale bootstrap when supported
 - Type-to-color mapping for card backgrounds
 - Readable text contrast logic (YIQ-based)
 - Finite no-repeat deck behavior
 - End-state with restart flow
 - Team pack support via `/play?pack=team`
+- Team pack easter-egg link on landing page
 - Inactive question support (`isActive`) for controlled visibility
 - Share action with native mobile share fallback to copy link
+- Support CTA section linking to Buy Me a Coffee
 
 ## Analytics
 Umami is integrated globally and tracks anonymous usage analytics.
@@ -44,3 +47,4 @@ Tracked events:
 - IDs are stable and intended for long-term share links.
 - Locale files are expected to stay aligned by ID.
 - Packs are controlled decks built from canonical IDs.
+- Question categories can be localized in UI by locale while keeping canonical category keys in content.
